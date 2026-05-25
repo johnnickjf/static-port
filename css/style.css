@@ -19,7 +19,7 @@ body {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  overflow: hidden;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   display: flex;
   align-items: center;
@@ -233,7 +233,8 @@ body {
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
-.proj-title .tag {
+.proj-title .tag,
+.link-label .tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   padding: 2px 6px;
@@ -259,6 +260,58 @@ body {
 .proj-card:hover .proj-arrow {
   color: var(--accent);
   transform: translateX(3px);
+}
+
+/* Games block */
+.games-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.games-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.25s;
+  text-decoration: none;
+  color: inherit;
+}
+.game-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(0,255,163,0.06);
+}
+.game-icon {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.game-info { flex: 1; min-width: 0; }
+.game-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.game-sub {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 1px;
 }
 
 /* RIGHT: Links */
@@ -384,4 +437,5 @@ body {
   .link-card.wide { grid-column: auto; }
   .profile-name h1 { font-size: 22px; }
   .logo-mark { width: 70px; height: 70px; padding: 12px; }
+  .games-grid { grid-template-columns: 1fr; }
 }
