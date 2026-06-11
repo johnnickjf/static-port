@@ -290,6 +290,7 @@ body {
   border-color: var(--accent);
   background: rgba(0,255,163,0.06);
 }
+.game-card.wide { grid-column: span 2; }
 .game-icon {
   width: 30px; height: 30px;
   border-radius: 8px;
